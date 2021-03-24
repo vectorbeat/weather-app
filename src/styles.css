@@ -163,7 +163,11 @@ hr {
 .btn-outline-secondary:hover {
   background-color: #121e24;
 }
-
+.repo-link {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
 .footer {
   background-color: #121e24;
   position: fixed;
