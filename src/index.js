@@ -16,6 +16,11 @@ function showTemperature(response) {
   let country = document.querySelector(".currently-country");
   let currentCountryName = response.data.sys.country;
   country.innerHTML = `${currentCountryName}`;
+  let iconElement = document.querySelector("#currentlyIcon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function callNavigator(event) {
