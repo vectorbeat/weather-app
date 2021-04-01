@@ -21,6 +21,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function callNavigator(event) {
@@ -44,6 +45,12 @@ function showTemperatureByCity(response) {
   let country = document.querySelector(".currently-country");
   let countryName = response.data.sys.country;
   country.innerHTML = `${countryName}`;
+  let iconElement = document.querySelector("#currentlyIcon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 let useCurrent = document.querySelector("#use-current");
