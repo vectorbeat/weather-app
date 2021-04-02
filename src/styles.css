@@ -92,6 +92,11 @@ a {
   text-align: center;
 }
 
+#currentlyIcon {
+  display: block;
+  margin: 0 auto;
+}
+
 hr {
   margin: 2px;
 }
