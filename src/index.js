@@ -22,6 +22,15 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+  let windElement = document.querySelector(".wind");
+  let windSpeed = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `Wind ${windSpeed}mph`;
+  let humElement = document.querySelector(".humidity");
+  let humidityPercent = Math.round(response.data.main.humidity);
+  humElement.innerHTML = `Humidity ${humidityPercent}%`;
+  let currentDesc = document.querySelector(".current-desc");
+  let currentDescriptionTitle = response.data.weather[0].description;
+  currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
 }
 
 function callNavigator(event) {
