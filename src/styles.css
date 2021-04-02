@@ -84,10 +84,12 @@ a {
   text-align: center;
   padding-bottom: 10px;
 }
+
 .wind,
 .perc {
   font-size: 12px;
   text-align: center;
+  border: none;
 }
 hr {
   margin: 2px;

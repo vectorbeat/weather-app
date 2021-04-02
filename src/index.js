@@ -53,7 +53,7 @@ function showTemperatureByCity(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
   let windElement = document.querySelector(".wind");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.setAttribute("value", `Wind ${windSpeed}mph`);
+  windElement.setAttribute("placeholder", `Wind ${windSpeed}mph`);
 }
 
 let useCurrent = document.querySelector("#use-current");
