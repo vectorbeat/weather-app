@@ -86,11 +86,12 @@ a {
 }
 
 .wind,
-.perc {
+.humidity,
+.current-desc {
   font-size: 12px;
   text-align: center;
-  border: none;
 }
+
 hr {
   margin: 2px;
 }

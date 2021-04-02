@@ -53,7 +53,21 @@ function showTemperatureByCity(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
   let windElement = document.querySelector(".wind");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.setAttribute("placeholder", `Wind ${windSpeed}mph`);
+  windElement.innerHTML = `Wind ${windSpeed}mph`;
+  let humElement = document.querySelector(".humidity");
+  let humidityPercent = Math.round(response.data.main.humidity);
+  humElement.innerHTML = `Humidity ${humidityPercent}%`;
+  let currentDesc = document.querySelector(".current-desc");
+  let currentDescriptionTitle = response.data.weather[0].description;
+  currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
+}
+
+function showDefaultCity() {
+  let city = document.querySelector(".currently-city");
+  city.innerHTML = `Houston`;
+  let apiK = "fb8b95424c106907f53c4fc0092c4971";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Houston&units=imperial&appid=${apiK}`;
+  axios.get(apiUrl).then(showTemperatureByCity);
 }
 
 let useCurrent = document.querySelector("#use-current");
@@ -62,3 +76,5 @@ useCurrent.addEventListener("click", callNavigator);
 let searchInput = document.querySelector("#search-box");
 let submitButton = document.querySelector(".search-bar");
 submitButton.addEventListener("submit", beginSearch);
+
+showDefaultCity();
