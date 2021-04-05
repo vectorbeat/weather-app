@@ -7,6 +7,11 @@ body {
   min-height: 600px;
 }
 
+.search-section {
+  padding-bottom: 0px;
+  margin: 0;
+}
+
 .test-lg {
   background-color: #000;
   font-size: 72px;
@@ -168,17 +173,13 @@ hr {
 .btn-outline-secondary:hover {
   background-color: #121e24;
 }
+.degree-btns {
+  padding-bottom: 5px;
+  margin: 0 auto;
+  margin-top: 0px;
+  max-width: 250px;
+}
 
-.degree-switch-btns {
-  margin: 0 auto;
-}
-.farenheit-btn {
-  margin: 0 auto;
-}
-
-.celsius-btn {
-  margin: 0 auto;
-}
 .repo-link {
   display: block;
   margin: 0 auto;
