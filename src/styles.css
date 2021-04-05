@@ -215,16 +215,18 @@ hr {
   .temp-descrip {
     font-size: 50%;
   }
-  #currentlyIcon,
-  .current-desc,
-  .wind,
-  .humidity {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 800px) {
-  .footer {
+  .footer,
+  #currentlyIcon,
+  .current-desc,
+  .wind,
+  .humidity,
+  .col-5 {
     display: none;
+  }
+  .col-7 {
+    margin: 0 auto;
   }
 }
