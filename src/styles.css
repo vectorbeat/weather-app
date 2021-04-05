@@ -210,11 +210,16 @@ hr {
     font-size: 20px;
   }
   .date,
-  .weather-icon,
   .high,
   .low,
   .temp-descrip {
     font-size: 50%;
+  }
+  #currentlyIcon,
+  .current-desc,
+  .wind,
+  .humidity {
+    display: none;
   }
 }
 
