@@ -29,7 +29,7 @@ p {
 
 .search-bar {
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   max-width: 525px;
   min-width: 315px;
 }
@@ -57,7 +57,7 @@ a {
   border: rgb(201, 201, 201) solid 1px;
   padding: 20px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 0px;
   max-width: 500px;
 }
 
@@ -167,6 +167,17 @@ hr {
 
 .btn-outline-secondary:hover {
   background-color: #121e24;
+}
+
+.degree-switch-btns {
+  margin: 0 auto;
+}
+.farenheit-btn {
+  margin: 0 auto;
+}
+
+.celsius-btn {
+  margin: 0 auto;
 }
 .repo-link {
   display: block;
