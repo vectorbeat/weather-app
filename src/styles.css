@@ -173,11 +173,17 @@ hr {
 .btn-outline-secondary:hover {
   background-color: #121e24;
 }
+
 .degree-btns {
   padding-bottom: 5px;
   margin: 0 auto;
   margin-top: 0px;
   max-width: 250px;
+}
+
+.celsius-btn,
+.farenheit-btn {
+  margin-top: 0;
 }
 
 .repo-link {
