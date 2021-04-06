@@ -82,8 +82,12 @@ function showDefaultCity() {
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-              <div class="row">
+
+  let forecastHTML = `<div class="row">`;
+
+  forecastHTML =
+    forecastHTML +
+    `    
                 <div class="forecast-date col">MON Apr 2</div>
                 <div class="weather-icon col">
                   <i class="fas fa-cloud"></i>
@@ -95,10 +99,24 @@ function displayForecast() {
                   Low <strong><br />59° F</strong>
                 </div>
                 <div class="forecast-temp-descrip col">Cloudy</div>
-              </div>             <hr />
-
-           
-`;
+                      <hr />`;
+  forecastHTML =
+    forecastHTML +
+    `    
+                <div class="forecast-date col">MON Apr 2</div>
+                <div class="weather-icon col">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="forecast-high col">
+                  High <strong><br />77° F</strong>
+                </div>
+                <div class="forecast-low col">
+                  Low <strong><br />59° F</strong>
+                </div>
+                <div class="forecast-temp-descrip col">Cloudy</div>
+                      <hr />`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 let useCurrent = document.querySelector("#use-current");
 useCurrent.addEventListener("click", callNavigator);
