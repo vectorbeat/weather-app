@@ -105,17 +105,17 @@ a {
 hr {
   margin: 2px;
 }
-.date,
+.forecast-date,
 .weather-icon,
-.high,
-.low,
-.temp-descrip {
+.forecast-high,
+.forecast-low,
+.forecast-temp-descrip {
   display: inline;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.date {
+.forecast-date {
   font-family: "Roboto Condensed", Sans-Serif;
   font-size: 22px;
   line-height: 1;
@@ -127,30 +127,21 @@ hr {
   text-align: center;
 }
 
-.high,
-.low {
+.forecast-high,
+.forecast-low {
   font-family: "Roboto Condensed", Sans-Serif;
   font-size: 18px;
   line-height: 1;
   text-align: center;
 }
 
-.temp-descrip {
+.forecast-temp-descrip {
   font-family: "Cabin", Sans-Serif;
   font-size: 22px;
   padding-top: 5px;
   text-align: center;
 }
 
-#day-link {
-  text-decoration: none;
-  font-size: 100%;
-  color: #000;
-}
-
-#day-link:hover {
-  background-color: rgb(245, 245, 245);
-}
 .btn-primary {
   font-family: "Roboto Condensed", Sans-Serif;
   display: block;
@@ -191,52 +182,21 @@ hr {
   margin: 0 auto;
   text-align: center;
 }
-.footer {
-  background-color: #121e24;
-  position: fixed;
-  font-family: "Roboto Condensed", Sans-Serif;
-  color: #ffffff;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-  height: 55px;
-  bottom: 0;
-}
-
-.recent-title {
-  display: inline;
-  font-size: 22px;
-}
-.first-search,
-.second-search,
-.third-search {
-  display: inline;
-  padding-top: 5px;
-}
-
-.first-search a,
-.second-search a,
-.third-search a {
-  font-family: "Roboto Condensed", Sans-Serif;
-  font-size: 16px;
-  color: #ffffff;
-}
 
 @media screen and (max-width: 480px) {
   .currently-temp,
   .currently-city {
     font-size: 20px;
   }
-  .date,
-  .high,
-  .low,
-  .temp-descrip {
+  .forecast-date,
+  .forecast-high,
+  .forecast-low,
+  .forecast-temp-descrip {
     font-size: 50%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .footer,
   #currentlyIcon,
   .current-desc,
   .wind,

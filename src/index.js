@@ -31,6 +31,7 @@ function showTemperature(response) {
   let currentDesc = document.querySelector(".current-desc");
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
+  displayForecast();
 }
 
 function callNavigator(event) {
@@ -69,6 +70,7 @@ function showTemperatureByCity(response) {
   let currentDesc = document.querySelector(".current-desc");
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
+  displayForecast();
 }
 
 function showDefaultCity() {
@@ -78,7 +80,26 @@ function showDefaultCity() {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Houston&units=imperial&appid=${apiK}`;
   axios.get(apiUrl).then(showTemperatureByCity);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+              <div class="row">
+                <div class="forecast-date col">MON Apr 2</div>
+                <div class="weather-icon col">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="forecast-high col">
+                  High <strong><br />77° F</strong>
+                </div>
+                <div class="forecast-low col">
+                  Low <strong><br />59° F</strong>
+                </div>
+                <div class="forecast-temp-descrip col">Cloudy</div>
+              </div>             <hr />
 
+           
+`;
+}
 let useCurrent = document.querySelector("#use-current");
 useCurrent.addEventListener("click", callNavigator);
 
