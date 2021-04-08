@@ -31,7 +31,6 @@ function showTemperature(response) {
   let currentDesc = document.querySelector(".current-desc");
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
-  displayForecast();
   getForecast(response.data.coord);
 }
 
@@ -71,7 +70,6 @@ function showTemperatureByCity(response) {
   let currentDesc = document.querySelector(".current-desc");
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
-  displayForecast();
   getForecast(response.data.coord);
 }
 
@@ -83,8 +81,8 @@ function showDefaultCity() {
   axios.get(apiUrl).then(showTemperatureByCity);
 }
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-
   let days = ["THURS", "FRI", "SAT", "SUN"];
   let forecastHTML = `<div class="row">`;
 
@@ -111,11 +109,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiK = "fb8b95424c106907f53c4fc0092c4971";
-
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiK}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
