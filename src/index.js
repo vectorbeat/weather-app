@@ -81,24 +81,23 @@ function showDefaultCity() {
   axios.get(apiUrl).then(showTemperatureByCity);
 }
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["THURS", "FRI", "SAT", "SUN"];
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `    
-                <div class="forecast-date col">${day} <br />Apr 2</div>
+                <div class="forecast-date col">${forecastDay.dt} <br />Apr 2</div>
                 <div class="weather-icon col">
-                  <i class="fas fa-cloud"></i>
+                  <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" />
                 </div>
                 <div class="forecast-high col">
-                  High <strong><br />77° F</strong>
+                  High <strong><br />${forecastDay.temp.max}°</strong>
                 </div>
                 <div class="forecast-low col">
-                  Low <strong><br />59° F</strong>
+                  Low <strong><br />${forecastDay.temp.min}° F</strong>
                 </div>
                 <div class="forecast-temp-descrip col">Cloudy</div>
                       <hr />`;
