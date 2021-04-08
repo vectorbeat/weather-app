@@ -105,13 +105,22 @@ a {
 hr {
   margin: 2px;
 }
-.forecast-date,
+
 .weather-icon,
-.forecast-high,
-.forecast-low,
 .forecast-temp-descrip {
   display: inline;
   margin-top: 10px;
+  margin-bottom: 5px;
+}
+.forecast-date {
+  display: inline;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.forecast-high,
+.forecast-low {
+  display: inline;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
@@ -137,7 +146,7 @@ hr {
 
 .forecast-temp-descrip {
   font-family: "Cabin", Sans-Serif;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 5px;
   text-align: center;
 }

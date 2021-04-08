@@ -102,7 +102,7 @@ function displayForecast(response) {
                 <div class="weather-icon col">
                   <img src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
-                  }@2x.png" alt="" />
+                  }@2x.png" alt="" width="70px"/>
                 </div>
                 <div class="forecast-high col">
                   High <strong><br />${Math.round(
@@ -112,7 +112,9 @@ function displayForecast(response) {
                 <div class="forecast-low col">
                   Low <strong><br />${Math.round(forecastDay.temp.min)}</strong>
                 </div>
-                <div class="forecast-temp-descrip col">Cloudy</div>
+                <div class="forecast-temp-descrip col">${
+                  forecastDay.weather[0].description
+                }</div>
                       <hr />`;
     }
   });
