@@ -80,6 +80,12 @@ function showDefaultCity() {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Houston&units=imperial&appid=${apiK}`;
   axios.get(apiUrl).then(showTemperatureByCity);
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUES", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -89,9 +95,13 @@ function displayForecast(response) {
     forecastHTML =
       forecastHTML +
       `    
-                <div class="forecast-date col">${forecastDay.dt} <br />Apr 2</div>
+                <div class="forecast-date col">${formatDay(
+                  forecastDay.dt
+                )} <br /></div>
                 <div class="weather-icon col">
-                  <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" />
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" alt="" />
                 </div>
                 <div class="forecast-high col">
                   High <strong><br />${forecastDay.temp.max}°</strong>
