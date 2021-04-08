@@ -32,6 +32,7 @@ function showTemperature(response) {
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
   displayForecast();
+  getForecast(response.data.coord);
 }
 
 function callNavigator(event) {
@@ -71,6 +72,7 @@ function showTemperatureByCity(response) {
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
   displayForecast();
+  getForecast(response.data.coord);
 }
 
 function showDefaultCity() {
@@ -80,11 +82,12 @@ function showDefaultCity() {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Houston&units=imperial&appid=${apiK}`;
   axios.get(apiUrl).then(showTemperatureByCity);
 }
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
   let days = ["THURS", "FRI", "SAT", "SUN"];
+  let forecastHTML = `<div class="row">`;
+
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -106,6 +109,16 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiK = "fb8b95424c106907f53c4fc0092c4971";
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiK}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 let useCurrent = document.querySelector("#use-current");
 useCurrent.addEventListener("click", callNavigator);
 
