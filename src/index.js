@@ -114,9 +114,7 @@ function displayForecast(response) {
                     forecastDay.temp.min
                   )}°F</strong>
                 </div>
-                <div class="forecast-temp-descrip col">${
-                  forecastDay.weather[0].description
-                }</div>
+                <div class="forecast-temp-descrip col">${forecastDay.weather[0].description.toUpperCase()}</div>
                       <hr />`;
     }
   });

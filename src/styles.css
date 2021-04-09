@@ -89,10 +89,12 @@ a {
   text-align: center;
   padding-bottom: 10px;
 }
-
-.wind,
-.humidity,
 .current-desc {
+  font-size: 16px;
+  text-align: center;
+}
+.wind,
+.humidity {
   font-size: 12px;
   text-align: center;
 }
@@ -146,9 +148,9 @@ hr {
 
 .forecast-temp-descrip {
   font-family: "Cabin", Sans-Serif;
-  font-size: 18px;
+  font-size: 15px;
   padding-top: 5px;
-  text-align: center;
+  text-align: right;
 }
 
 .btn-primary {
