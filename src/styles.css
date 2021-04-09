@@ -193,6 +193,9 @@ hr {
   .forecast-temp-descrip {
     font-size: 50%;
   }
+  .forecast-temp-descrip {
+    font-size: 11px;
+  }
 }
 
 @media screen and (max-width: 800px) {
