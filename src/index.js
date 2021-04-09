@@ -130,8 +130,12 @@ function getForecast(coordinates) {
 }
 
 function viewTenDay(event) {
-  let tenDayCity = "#currentlyCity.value";
-  console.log(tenDayCity);
+  let tenDayCity = document.getElementById("currentlyCity").innerText;
+
+  window.open(
+    `https://www.google.com/search?q=10+day+forecast+${tenDayCity}`,
+    "_blank"
+  );
 }
 
 let useCurrent = document.querySelector("#use-current");
