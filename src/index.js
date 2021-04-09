@@ -129,11 +129,19 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function viewTenDay(event) {
+  let tenDayCity = "#currentlyCity.value";
+  console.log(tenDayCity);
+}
+
 let useCurrent = document.querySelector("#use-current");
 useCurrent.addEventListener("click", callNavigator);
 
 let searchInput = document.querySelector("#search-box");
 let submitButton = document.querySelector(".search-bar");
 submitButton.addEventListener("submit", beginSearch);
+
+let tenDayBtn = document.querySelector("#tenDay");
+tenDayBtn.addEventListener("click", viewTenDay);
 
 showDefaultCity();
