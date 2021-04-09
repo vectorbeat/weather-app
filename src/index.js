@@ -32,6 +32,7 @@ function showTemperature(response) {
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
   getForecast(response.data.coord);
+  changeBodyBg(temperature);
 }
 
 function callNavigator(event) {
@@ -71,6 +72,7 @@ function showTemperatureByCity(response) {
   let currentDescriptionTitle = response.data.weather[0].description;
   currentDesc.innerHTML = `${currentDescriptionTitle.toUpperCase()}`;
   getForecast(response.data.coord);
+  changeBodyBg(temperature);
 }
 
 function showDefaultCity() {
@@ -136,6 +138,17 @@ function viewTenDay(event) {
     `https://www.google.com/search?q=10+day+forecast+${tenDayCity}`,
     "_blank"
   );
+}
+
+function changeBodyBg(temperature) {
+  console.log(temperature);
+  if (temperature >= 80) {
+    document.body.style.background = "#f97d6d";
+  } else if (temperature >= 69 && temperature <= 79) {
+    document.body.style.background = "#fae16c";
+  } else if (temperature <= 59) {
+    document.body.style.background = "#6de7f9";
+  }
 }
 
 let useCurrent = document.querySelector("#use-current");

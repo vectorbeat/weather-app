@@ -1,5 +1,4 @@
 body {
-  background-color: #fae16c;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -18,7 +17,6 @@ body {
 }
 
 .container {
-  background-color: #fae16c;
   font-family: "Roboto Condensed", Sans-Serif;
   font-size: 35px;
   flex: 1 0 auto;
