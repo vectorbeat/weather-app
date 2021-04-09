@@ -107,10 +107,12 @@ function displayForecast(response) {
                 <div class="forecast-high col">
                   High <strong><br />${Math.round(
                     forecastDay.temp.max
-                  )}°</strong>
+                  )}°F</strong>
                 </div>
                 <div class="forecast-low col">
-                  Low <strong><br />${Math.round(forecastDay.temp.min)}</strong>
+                  Low <strong><br />${Math.round(
+                    forecastDay.temp.min
+                  )}°F</strong>
                 </div>
                 <div class="forecast-temp-descrip col">${
                   forecastDay.weather[0].description
